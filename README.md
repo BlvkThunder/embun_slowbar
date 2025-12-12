@@ -1,6 +1,8 @@
 # ☕ Embun Slowbar
 
 A full-stack café web application featuring coffee ordering, library management, boardgame catalog, and room reservations.
+AI usage acknowledgement: 
+Readme.md and knowledge.md made completely with Antigravity AI. 
 
 ![PHP](https://img.shields.io/badge/PHP-8.2-777BB4?logo=php&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?logo=mysql&logoColor=white)
