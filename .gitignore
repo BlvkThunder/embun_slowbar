@@ -1,0 +1,38 @@
+# Environment files
+.env
+*.local
+
+# Dependencies
+node_modules/
+vendor/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker volumes
+db_data/
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Upload files (keep structure, ignore actual uploads)
+# Uncomment if you don't want to track uploaded images
+# app/public_html/embun/uploads/menu/*
+# app/public_html/embun/uploads/books/*
+# app/public_html/embun/uploads/boardgames/*
+# app/public_html/embun/uploads/rooms/*
+# app/public_html/embun/uploads/website/*
+# !app/public_html/embun/uploads/*/.gitkeep

@@ -1,0 +1,660 @@
+/* Admin Panel Styles */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --success-color: #27ae60;
+    --danger-color: #e74c3c;
+    --warning-color: #f39c12;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --border-color: #bdc3c7;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Login Page */
+body.login-page {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 20px;
+}
+
+.login-container {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-form h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.login-form h1 i {
+    margin-right: 10px;
+}
+
+.login-form > p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.error-message {
+    background-color: #fee;
+    color: var(--danger-color);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    border: 1px solid #f5c6cb;
+}
+
+.login-footer {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.login-footer a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+}
+
+/* Button Styles */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.btn-primary {
+    background-color: var(--secondary-color);
+    color: white;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* Header */
+.admin-header {
+    background-color: white;
+    box-shadow: var(--shadow);
+    padding: 15px 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header-content h1 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.header-content h1 i {
+    margin-right: 10px;
+    color: var(--secondary-color);
+}
+
+.admin-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Navigation */
+.admin-nav {
+    background-color: white;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 30px;
+}
+
+.nav-tabs {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-tab {
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #666;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-tab:hover,
+.nav-tab.active {
+    color: var(--secondary-color);
+    border-bottom-color: var(--secondary-color);
+    background-color: #f8f9fa;
+}
+
+/* Main Content */
+.admin-main {
+    min-height: calc(100vh - 200px);
+    padding: 20px 0;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.section-header h2 {
+    color: var(--primary-color);
+    margin: 0;
+}
+
+/* Tables */
+.table-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th,
+.data-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.data-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.data-table tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.action-btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.3s ease;
+}
+
+.edit-btn {
+    background-color: var(--warning-color);
+    color: white;
+}
+
+.delete-btn {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #95a5a6;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #7f8c8d;
+}
+
+.btn-logout {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+/* Modal Styles - Fixed Position Popups */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 0;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    padding: 20px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.close {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+    opacity: 0.8;
+}
+
+.close:hover {
+    opacity: 1;
+}
+
+/* Form Styles for Modals */
+.modal-content form {
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.form-row .form-group {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    transform: scale(1.2);
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loading-spinner .spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Badge Styles */
+.badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.badge-success {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.badge-secondary {
+    background-color: #95a5a6;
+    color: white;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.btn-primary {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background-color: #95a5a6;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #7f8c8d;
+}
+
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+.edit-btn {
+    background-color: var(--warning-color);
+    color: white;
+}
+
+.delete-btn {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+/* Action Buttons in Tables */
+.action-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .nav-tabs {
+        flex-direction: column;
+    }
+    
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .data-table {
+        font-size: 14px;
+    }
+    
+    .data-table th,
+    .data-table td {
+        padding: 8px 10px;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    .admin-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .login-container {
+        padding: 20px;
+    }
+    /* Add these styles to your existing CSS */
+
+/* Improved form styles for website content */
+#website-content-form .form-group {
+    margin-bottom: 25px;
+}
+
+#website-content-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+#website-content-form input[type="text"],
+#website-content-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+#website-content-form input[type="text"]:focus,
+#website-content-form textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+#website-content-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Section headers in modal */
+#website-content-modal h4 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 8px;
+    font-size: 1.1rem;
+}
+}
+
+/* Avatar di header - letakkan di kanan atas */
+.admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* memastikan avatar di kanan */
+  gap: 12px;
+  padding: 12px 0;
+}
+
+/* container untuk info admin (nama + tombol) */
+.admin-info { display:flex; align-items:center; gap:10px; }
+
+/* avatar kecil bulat */
+.header-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  overflow: hidden;
+  display:inline-block;
+  border: 2px solid rgba(0,0,0,0.06);
+  box-shadow: 0 2px 6px rgba(16,24,40,0.06);
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.header-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display:block;
+}
+.header-avatar:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(16,24,40,0.12); }
+
+/* jika header kamu bukan .admin-header, tambahkan selector yang sesuai */

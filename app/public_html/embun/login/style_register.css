@@ -1,0 +1,81 @@
+/* ===== Global ===== */
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #7b6cf6, #6ec6ff);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+/* ===== Card Container ===== */
+.register-container {
+  background: #fff;
+  padding: 40px 50px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 360px;
+}
+
+/* ===== Title ===== */
+.register-container h3 {
+  color: #1a1a1a;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.register-container i {
+  color: #777;
+  font-size: 14px;
+}
+
+/* ===== Input Fields ===== */
+.register-container input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.register-container input:focus {
+  outline: none;
+  border-color: #5daeff;
+  box-shadow: 0 0 4px rgba(93, 174, 255, 0.5);
+}
+
+/* ===== Button ===== */
+.register-container button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background-color: #2196f3;
+  border: none;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.register-container button:hover {
+  background-color: #1976d2;
+}
+
+/* ===== Back Link ===== */
+.register-container a {
+  display: inline-block;
+  margin-top: 15px;
+  color: #2196f3;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.register-container a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,75 @@
+services:
+  # PHP + Apache Service
+  app:
+    build:
+      context: ./docker/php
+      dockerfile: Dockerfile
+    container_name: Embun
+    restart: unless-stopped
+    volumes:
+      - ./app/public_html:/var/www/html
+    ports:
+      - "8080:80"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - DB_HOST=db
+      - DB_NAME=${DB_NAME:-embun_slowbar}
+      - DB_USER=${DB_USER:-embun_user}
+      - DB_PASSWORD=${DB_PASSWORD:-embun_password_123}
+      - MIDTRANS_SERVER_KEY=${MIDTRANS_SERVER_KEY:-Mid-server-98kpatTHxQfwBNveH0ltKckl}
+      - MIDTRANS_CLIENT_KEY=${MIDTRANS_CLIENT_KEY:-Mid-client-QkOUo2wGLK0eGGQ3}
+      - MIDTRANS_IS_PRODUCTION=${MIDTRANS_IS_PRODUCTION:-false}
+    networks:
+      - embun_network
+
+  # Database Service (MySQL)
+  db:
+    image: mysql:8.0
+    container_name: Embun_db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root_password_123}
+      MYSQL_DATABASE: ${DB_NAME:-embun_slowbar}
+      MYSQL_USER: ${DB_USER:-embun_user}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-embun_password_123}
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "3307:3306"
+    networks:
+      - embun_network
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 60s
+
+  # phpMyAdmin Service
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: Embun_pma
+    restart: unless-stopped
+    depends_on:
+      - db
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root_password_123}
+      UPLOAD_LIMIT: 50M
+    ports:
+      - "8888:80"
+    networks:
+      - embun_network
+
+# Named volume to persist database data
+volumes:
+  db_data:
+
+    # Network for service communication
+networks:
+  embun_network:
+    driver: bridge
